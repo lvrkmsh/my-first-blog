@@ -3,20 +3,17 @@
         <title>Maria's blog</title>
     </head>
     <body>
+      <div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
         <div>
-            <h1><a href="/">Hello there!</a></h1>
-        </div>
-
-        <div>
-            <p>It's me</p>
-            <h2><a href="">Who am I?</a></h2>
-            <p>I'm your internal voice</p>
-        </div>
-
-        <div>
-            <p>So intresting, isn't it?</p>
-            <h2><a href="">Talk with me</a></h2>
-            <p>About something</p>
+          {% for post in posts %}
+      <div>
+          <p>published: {{ post.published_date }}</p>
+          <h1><a href="">{{ post.title }}</a></h1>
+          <p>{{ post.text|linebreaksbr }}</p>
+      </div>
+  {% endfor %}
         </div>
     </body>
 </html>
